@@ -23,11 +23,11 @@
         
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'blog-home' %}">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item{% if title == NULL %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'blog-home' %}">Home{% if title == NULL %} <span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
+                <li class="nav-item{% if title == 'About' %} active{% endif %}">
+                    <a class="nav-link" href="{% url 'blog-about' %}">About{% if title == 'About' %} <span class="sr-only">(current)</span>{% endif %}</a>
                 </li>
                 </ul>
                 <ul class="navbar-nav mr-left">
@@ -49,61 +49,54 @@
                     {% block content %}
                     {% endblock %}
                 </div>
-                <div class="col-4"><h3>Sidebar</h3>
-                    <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                <div class="col-4"><h3>Developer</h3>
+                    <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                        <div class="card-header">GitHub Repository</div>
                         <div class="card-body">
-                          <h5 class="card-title">Primary card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige;" href="https://github.com/pratikstemkar/slag-writer">slag-writer</a></h5>
+                          <p class="card-text">Make sure to &star; the repository.<br></p>
                         </div>
                       </div>
                       <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                        <div class="card-header">GitHub</div>
                         <div class="card-body">
-                          <h5 class="card-title">Secondary card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="https://github.com/pratikstemkar/">Pratik Temkar</a></h5>
+                          <p class="card-text">Check out the GitHub profile for more projects.</p>
                         </div>
                       </div>
                       <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                        <div class="card-header">Linkedin</div>
                         <div class="card-body">
-                          <h5 class="card-title">Success card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="https://linkedin.com/in/pratikstemkar/">Pratik Temkar</a></h5>
+                          <p class="card-text">Check out the Linkedin Profile.</p>
                         </div>
                       </div>
-                      <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                      <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Twitter</div>
                         <div class="card-body">
-                          <h5 class="card-title">Danger card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                      </div>
-                      <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
-                        <div class="card-body">
-                          <h5 class="card-title">Warning card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="https://twitter.com/pratikstemkar/">Pratik Temkar</a></h5>
+                          <p class="card-text">Follow me on Twitter.</p>
                         </div>
                       </div>
                       <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                        <div class="card-header">Facebook</div>
                         <div class="card-body">
-                          <h5 class="card-title">Info card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="https://fb.com/pratikstemkar/">Pratik Temkar</a></h5>
+                          <p class="card-text">Find me on Facebook.</p>
                         </div>
                       </div>
-                      <div class="card bg-light mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                      <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Resume</div>
                         <div class="card-body">
-                          <h5 class="card-title">Light card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="https://pratikstemkar.me/assets/pdf/Resume.pdf">Pratik Temkar - Resume</a></h5>
+                          <p class="card-text">Check out the Resume.</p>
                         </div>
                       </div>
-                      <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Header</div>
+                      <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+                        <div class="card-header">Mail</div>
                         <div class="card-body">
-                          <h5 class="card-title">Dark card title</h5>
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <h5 class="card-title"><a style="color: beige" href="mailto:pratikstemkar@gmail.com">pratikstemkar@gmail.com</a></h5>
+                          <p class="card-text">Mail me for any queries.</p>
                         </div>
                       </div>
                 </div>
