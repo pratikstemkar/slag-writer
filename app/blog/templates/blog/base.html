@@ -31,11 +31,11 @@
                 </li>
                 </ul>
                 <ul class="navbar-nav mr-left">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Register</a>
+                    <li class="nav-item{% if title == 'Register' %} active{% endif %}">
+                        <a class="nav-link" href="{% url 'users-register' %}">Register{% if title == "Register" %} <span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                    <li class="nav-item{% if title == 'Login' %} active{% endif %}">
+                        <a class="nav-link" href="#">Login{% if title == 'Login' %} <span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                 </ul>
             </div>
@@ -46,6 +46,13 @@
             <!-- Row -->
             <div class="row">
                 <div class="col-8">
+                    {% if messages %}
+                        {% for message in messages %}
+                            <div class="alert alert-{{ message.tags }}">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
                     {% block content %}
                     {% endblock %}
                 </div>
