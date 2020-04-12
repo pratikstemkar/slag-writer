@@ -1,5 +1,7 @@
 {% extends 'blog/base.html' %}
 {% load crispy_forms_tags %}
 {% block content %}
+    <img class = "rounded-circle" src="{{ user.profile.image.url }}" height=100 width=100 alt="profile pic">
     <h1>{{ user.username }}</h1>
+    <h3>{{ user.email }}</h3>
 {% endblock %}
