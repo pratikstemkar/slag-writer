@@ -3,16 +3,33 @@
     <div class="container">
         <form method="POST">
             {% csrf_token %}
-            <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Join Today !</legend>
-                {{form.as_p}}
-            </fieldset>
-            <div class="form-group">
-                <button class="btn btn-outline-info" type="submit">Sign Up</button>
-            </div>
+            <legend class="border-bottom">Register</legend>
+                <div class="form-group pt-3">
+                    <label for="exampleInputUsername1">Username</label>
+                    <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp">
+                    <small id="usernameHelp" class="form-text text-muted">Username should be in lowercase.</small>
+                </div>
+                <div class="form-group pt-3">
+                    <label for="exampleInputName1">Full Name</label>
+                    <input type="text" class="form-control" id="exampleInputName1" aria-describedby="nameHelp">
+                </div>
+                <div class="form-group pt-3">
+                  <label for="exampleInputEmail1">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword2">Check Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword2">
+                  </div>
+                <button type="submit" class="btn btn-outline-info">Register</button>
         </form>
         <div class="border-top pt-3">
-            <small class="text-muted">Already have an account? <a class="ml-2" href="#">Sign In</a></small>
+            <small class="text-muted">Already have an account? <a class="ml-2" href="{% url 'users-login' %}">Sign In</a></small>
         </div>
     </div>
 {% endblock %}
