@@ -1,0 +1,21 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+    
+    <div class="card text-center mt-2">
+        <div class="card-header">
+            <img src="{{ object.author.profile.image.url } }" alt="" class="rounded-circle">
+        {{object.author}}
+        </div>
+        <div class="card-body">
+        <h5 class="card-title">{{object.title}}</h5>
+        <p class="card-text">{{object.content}}</p>
+        <a href="#" class="btn btn-primary">Read</a>
+        </div>
+        <div class="card-footer text-muted">
+        {{object.date_posted}}
+        </div>
+    </div>
+    
+
+{% endblock %}
