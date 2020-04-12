@@ -31,12 +31,18 @@
                 </li>
                 </ul>
                 <ul class="navbar-nav mr-left">
+                  {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="{% url 'users-logout' %}">Logout</a>
+                    </li>
+                  {% else %}
                     <li class="nav-item{% if title == 'Register' %} active{% endif %}">
                         <a class="nav-link" href="{% url 'users-register' %}">Register{% if title == "Register" %} <span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
                     <li class="nav-item{% if title == 'Login' %} active{% endif %}">
                         <a class="nav-link" href="{% url 'users-login' %}">Login{% if title == 'Login' %} <span class="sr-only">(current)</span>{% endif %}</a>
                     </li>
+                  {% endif %}
                 </ul>
             </div>
         </nav>
