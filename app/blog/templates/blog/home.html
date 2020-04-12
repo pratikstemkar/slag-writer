@@ -4,6 +4,7 @@
     {% for post in posts %}
         <div class="card text-center mt-2">
             <div class="card-header">
+                <img src="{{ post.author.profile.image.url } }" alt="" class="rounded-circle">
             {{post.author}}
             </div>
             <div class="card-body">
