@@ -11,7 +11,7 @@ from .models import Post
 #     return render(request, 'blog/home.html', context)
 
 class PostListView(ListView):
-    # paginate_by = 4
+    paginate_by = 4
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
