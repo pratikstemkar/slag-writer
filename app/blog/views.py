@@ -11,11 +11,11 @@ from .models import Post
 #     return render(request, 'blog/home.html', context)
 
 class PostListView(ListView):
+    # paginate_by = 4
     model = Post
     template_name = 'blog/home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
-    # paginate_by = 4
 
 class UserPostListView(ListView):
     model = Post
