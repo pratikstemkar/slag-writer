@@ -1,11 +1,11 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-
+    <h1 class="mb-3">Post by {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
     {% for post in posts %}
         <div class="card text-center mt-2">
             <div class="card-header">
-                <img src="{{ post.author.profile.image.url }}" alt="" class="rounded-circle">
-                <a href="{% url  'user-posts' post.author.username%}">{{ post.author }}</a>
+                <img src="{{ post.author.profile.image.url } }" alt="" class="rounded-circle">
+            {{post.author}}
             </div>
             <div class="card-body">
             <a href="{% url 'post-detail' post.id %}" class="card-title">{{post.title}}</a>
